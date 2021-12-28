@@ -1,0 +1,27 @@
+jobs:
+  - name: job-os-release
+    public: true
+    plan:
+      - task: show-os-release
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source: {repository: alpine}
+          run:
+            path: cat 
+            args: [/etc/os-release]
+
+
+# fly -t tutorial set-pipeline -c 01_pipeline-show-os-release.yml -p show os-release
+# fly -t tutorial unpause-pipeline -p job-os-release
+# fly -t tutorial unpause-job --job task/job-name
+
+# fly -t tutorial watch --job task/job-name
+
+
+# fly tutorial trigger-job -j task/job-name -w
+
+          #run:
+            #path: date
+            #args:

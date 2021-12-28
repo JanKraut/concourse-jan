@@ -1,0 +1,14 @@
+# Task Scripts
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: ubuntu}
+
+inputs:
+  - name: examples # mount pwd to execute the sh script
+
+run:
+  path: /bin/sh
+  args: [task-script.sh]

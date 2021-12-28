@@ -1,0 +1,21 @@
+# Pass files or folders into tasks for processing
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: alpine}
+
+#1 - no input -> pwd
+
+#2 input manuell
+#inputs:
+#  - name: manual-inpunt # " - manual-input=. or ../concourse-jan"
+
+#3 inputs same dir
+# inputs:
+#  - name: examples # übergeordneten Ordner angeben, Ordner wird gemountet
+
+run:
+  path: ls
+  args: "-la"

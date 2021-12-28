@@ -1,0 +1,6 @@
+jobs:
+  - name: hello-worl-task-file
+    public: true
+    plan:
+      - task: task-file
+        file: concourse-jan/examples/hello-world.yml
