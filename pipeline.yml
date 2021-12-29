@@ -25,7 +25,7 @@ jobs:
           #  path: echo
           #  args: [hello world]
           #file: concourse-jan/tasks/test-pipeline-task.yml
-        file: concourse-jan-pipeline/tasks/concourse-task.yml
+        file: concourse-jan-pipeline/tasks/generate-files-task.yml
 
       - task: show-files
         input_mapping:
