@@ -5,7 +5,7 @@ resources:
   source: {uri: "https://github.com/JanKraut/concourse-jan.git"}
 
 jobs:
-- name: hello-job
+- name: print-date
   plan:
     - get: concourse-jan-pipeline
       trigger: true
