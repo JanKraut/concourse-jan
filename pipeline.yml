@@ -18,4 +18,4 @@ jobs:
         #concourse-jan: concourse-jan # <- Ressourcen-Namen
       #output_mapping:
         #output: generated-output  
-      file: jobs/concourse-task.yml
+      file: tasks/concourse-task.yml

@@ -14,6 +14,5 @@ image_resource:
 #  - name: output
 
 run:
-  path: ls
-  args:
-    - -la
+  path: /bin/sh
+  args: [tasks/task-script.sh]
