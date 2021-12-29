@@ -15,6 +15,7 @@ outputs:
   - name: output
 
 run:
-  path: concourse-jan-pipeline-git/tasks/generate-date.sh
+  path: /bin/sh
   args:
+    - concourse-jan-pipeline-git/example-pipe01/tasks/generate-date.sh
     - output/out.txt

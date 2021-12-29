@@ -1,30 +1,29 @@
 ---
 resources:
-- name: concourse-jan-pipeline
-  type: git
-  source: {uri: "https://github.com/JanKraut/concourse-jan.git"}
+  - name: concourse-jan-pipeline
+    type: git
+    source: { uri: "https://github.com/JanKraut/concourse-jan.git" }
 
 jobs:
-- name: print-date
-  plan:
-    - get: concourse-jan-pipeline
-      trigger: true
-      
-    - task: generate-date
+  - name: print-date
+    plan:
+      - get: concourse-jan-pipeline
+        trigger: true
 
-      input_mapping:
-        concourse-jan-pipeline-git: concourse-jan-pipeline
-      output_mapping:
-        output: generated-date
+      - task: generate-date
+        input_mapping:
+          ## <task-file>: <current>
+          concourse-jan-pipeline-git: concourse-jan-pipeline
 
-      file: concourse-jan-pipeline/example-pipe01/tasks/generate-date.yml
+        output_mapping:
+          output: generated-date
 
+        file: concourse-jan-pipeline/example-pipe01/tasks/generate-date.yml
 
+      - task: print-output
 
-    - task: print-output
+        input_mapping:
+          concourse-jan-pipeline-git: concourse-jan-pipeline
+          message: generated-date
 
-      input_mapping:
-        concourse-jan-pipeline-git: concourse-jan-pipeline
-        message: generated-date
-
-      file: concourse-jan-pipeline/example-pipe01/tasks/print-date.yml
+        file: concourse-jan-pipeline/example-pipe01/tasks/print-date.yml

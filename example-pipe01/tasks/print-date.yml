@@ -11,6 +11,7 @@ inputs:
   - name: message
 
 run:
-  path: concourse-jan-pipeline-git/tasks/print-date.sh
+  path: /bin/sh
   args:
+    - concourse-jan-pipeline-git/example-pipe01/tasks/print-date.sh
     - message/out.txt
