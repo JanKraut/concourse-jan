@@ -10,7 +10,7 @@ params:
   FILES:
 
 inputs:
-  - name: concourse-jan
+  - name: test-input
 
 #outputs:
 #  - name: output

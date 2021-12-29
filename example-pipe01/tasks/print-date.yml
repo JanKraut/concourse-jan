@@ -1,0 +1,16 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: ubuntu
+
+inputs:
+  - name: concourse-jan-pipeline-git
+  - name: message
+
+run:
+  path: concourse-jan-pipeline-git/tasks/print-date.sh
+  args:
+    - message/out.txt
