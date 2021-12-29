@@ -2,7 +2,7 @@
 resources:
   - name: concourse-jan-pipeline
     type: git
-    source: {uri: "git@github.com:JanKraut/concourse-jan.git"}
+    source: {uri: "https://github.com/JanKraut/concourse-jan.git"}
 
 jobs:
   - name: show-date-job
@@ -16,9 +16,25 @@ jobs:
         #    type: docker-image
         #    source: {repository: ubuntu}
         input_mapping:
-          test: concourse-jan-pipeline
+          test-input: concourse-jan-pipeline
+        output_mapping:
+          name: ordner
+        params:
+          FILES: ordner
           #run:
           #  path: echo
           #  args: [hello world]
           #file: concourse-jan/tasks/test-pipeline-task.yml
-        file: concourse-jan-pipeline/examples/hello-world.yml
+        file: concourse-jan-pipeline/tasks/concourse-task.yml
+
+      - task: show-files
+        input_mapping:
+          test: concourse-jan-pipeline123
+          name: ordner
+        params:
+          FILES: ordner
+          #run:
+          #  path: echo
+          #  args: [hello world]
+          #file: concourse-jan/tasks/test-pipeline-task.yml
+        file: concourse-jan-pipeline/tasks/concourse-task.yml
