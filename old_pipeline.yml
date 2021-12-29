@@ -1,0 +1,21 @@
+---
+#resources:
+#- name: concourse-jan
+#  type: git
+#  source: {uri: "git@github.com:JanKraut/concourse-jan.git"}
+
+# Task 1: Generiere Ausgabe
+# Task 2: Ausgabe der Werte aus der Datei
+# Task 3: Wenn Datei Wert X. enthält, Ausgabe der Datei, z. B. Anzahl
+
+jobs:
+- name: check-if-value-exists
+  plan:
+    #- get: concourse-jan
+    #  trigger: true
+    - task: generate-output
+      #input_mapping:
+        #concourse-jan: concourse-jan # <- Ressourcen-Namen
+      #output_mapping:
+        #output: generated-output  
+      file: tasks/concourse-task.yml

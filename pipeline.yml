@@ -1,21 +1,22 @@
 ---
-#resources:
-#- name: concourse-jan
-#  type: git
-#  source: {uri: "git@github.com:JanKraut/concourse-jan.git"}
-
-# Task 1: Generiere Ausgabe
-# Task 2: Ausgabe der Werte aus der Datei
-# Task 3: Wenn Datei Wert X. enthält, Ausgabe der Datei, z. B. Anzahl
+resources:
+  - name: concourse-jan
+    type: git
+    source: {uri: "git@github.com:JanKraut/concourse-jan.git"}
 
 jobs:
-- name: check-if-value-exists
-  plan:
-    #- get: concourse-jan
-    #  trigger: true
-    - task: generate-output
-      #input_mapping:
-        #concourse-jan: concourse-jan # <- Ressourcen-Namen
-      #output_mapping:
-        #output: generated-output  
-      file: tasks/concourse-task.yml
+  - name: test-pipeline-job
+    plan:
+      #- get: concourse-jan-pipeline # get-resource name
+      - task: test-pipeline-task
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source: {repository: ubuntu}
+          input_mapping:
+            test: test1
+          #run:
+          #  path: echo
+          #  args: [hello world]
+          file: concourse-jan/tasks/test-pipeline-task.yml

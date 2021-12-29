@@ -10,7 +10,8 @@ image_resource:
 
 #2 input manuell
 #inputs:
-#  - name: manual-inpunt # " - manual-input=. or ../concourse-jan"
+#  - name: manual-input # " - manual-input=. or ../concourse-jan"
+# fly -t tutorial execute -c inputs_required.yml -i manual-input=.
 
 #3 inputs same dir
 # inputs:

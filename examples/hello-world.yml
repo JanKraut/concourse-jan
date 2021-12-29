@@ -9,4 +9,5 @@ run:
   path: echo
   args: [hello world]
 
-# fly -t tutorial build
+#fly -t tutorial execute -c
+# fly -t tutorial builds

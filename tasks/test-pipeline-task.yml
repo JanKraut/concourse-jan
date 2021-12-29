@@ -1,0 +1,16 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: ubuntu}
+
+  params:
+
+  inputs:
+  outputs:
+
+  run:
+    path:
+    args:
+      - 
