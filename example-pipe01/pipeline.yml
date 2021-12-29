@@ -2,6 +2,7 @@
 resources:
   - name: concourse-jan-pipeline
     type: git
+    icon: github
     source: { uri: "https://github.com/JanKraut/concourse-jan.git" }
 
 jobs:
