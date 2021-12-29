@@ -17,7 +17,9 @@ jobs:
       output_mapping:
         output: generated-date
 
-      file: concourse-jan-pipeline/jobs/generate-date.yml
+      file: concourse-jan-pipeline/example-pipe01/tasks/generate-date.yml
+
+
 
     - task: print-output
 
@@ -25,4 +27,4 @@ jobs:
         concourse-jan-pipeline-git: concourse-jan-pipeline
         message: generated-date
 
-      file: concourse-jan-pipeline/tasks/print-date.yml
+      file: concourse-jan-pipeline/example-pipe01/tasks/print-date.yml
