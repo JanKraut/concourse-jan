@@ -3,11 +3,10 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: alpine}
+  source: { repository: busybox }
 
 run:
   path: echo
-  args: [hello world]
-
+  args: [hello world!!!!!!!]
 #fly -t tutorial execute -c
 # fly -t tutorial builds

@@ -9,8 +9,9 @@ image_resource:
 #1 - no input -> pwd
 
 #2 input manuell
-#inputs:
-#  - name: manual-input # " - manual-input=. or ../concourse-jan"
+inputs:
+  - name: manual-input # " - manual-input=. or ../concourse-jan"
+  - name: man-in
 # fly -t tutorial execute -c inputs_required.yml -i manual-input=.
 
 #3 inputs same dir
@@ -19,4 +20,4 @@ image_resource:
 
 run:
   path: ls
-  args: "-la"
+  args: ["-lRa"]

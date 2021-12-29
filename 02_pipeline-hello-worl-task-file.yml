@@ -1,13 +1,12 @@
----
 resources:
-- name: concourse-jan-pipeline
-  type: git
-  source: {uri: "https://github.com/JanKraut/concourse-jan.git"}
+  - name: concourse-jan-git
+    type: git
+    source: { uri: "https://github.com/JanKraut/concourse-jan.git" }
 
 jobs:
-  - name: hello-worl-task-file
+  - name: hello-world-task-file
     public: true
     plan:
+      - get: concourse-jan-git
       - task: task-file
-        file: concourse-jan-pipeline/examples/hello-world.yml
-      - get: concourse-jan-pipeline
+        file: concourse-jan-git/examples/hello-world.yml

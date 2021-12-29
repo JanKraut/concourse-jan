@@ -11,4 +11,4 @@ inputs:
 
 run:
   path: /bin/sh
-  args: [task-script.sh]
+  args: ["examples/task-script.sh"]

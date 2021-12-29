@@ -10,14 +10,15 @@ jobs:
             source: {repository: alpine}
           run:
             path: cat 
-            args: [/etc/os-release]
+            args: [/etc/passwd]
 
 
 # fly -t tutorial set-pipeline -c 01_pipeline-show-os-release.yml -p show os-release
 # fly -t tutorial unpause-pipeline -p job-os-release
 # fly -t tutorial unpause-job --job task/job-name
 
-# fly -t tutorial watch --job task/job-name
+## --job / -j
+# fly -t tutorial watch --job pipeline_name/job-name
 
 
 # fly tutorial trigger-job -j task/job-name -w
